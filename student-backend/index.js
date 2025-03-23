@@ -14,6 +14,9 @@ app.use(cors({
 }))
 app.use("/User",userRoute)
 app.use("/student",studentRoute)
+app.get("/",(req,res)=>{
+    res.send("hello this is student management web")
+})
 
 
 
