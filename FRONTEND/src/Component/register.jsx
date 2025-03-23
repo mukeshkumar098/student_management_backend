@@ -13,7 +13,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:8070/user/register", {
+      const res = await axios.post("https://student-management-seven-lemon.vercel.app/user/register", {
         name,
         email,
         password,
