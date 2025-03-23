@@ -18,7 +18,7 @@ const AddStudent = () => {
       }
 
       try {
-        const res = await axios.get("http://localhost:8070/student/getAllstudent", {
+        const res = await axios.get(`${import.meta.env.REACT_APP_SERVER_URL}/student/getAllstudent`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setStudents(res.data);
@@ -66,7 +66,7 @@ const AddStudent = () => {
     });
 
     try {
-      const res = await axios.post("http://localhost:8070/student/addStudents", formData, {
+      const res = await axios.post(`${import.meta.env.REACT_APP_SERVER_URL}/student/addStudents`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data",

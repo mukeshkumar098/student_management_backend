@@ -10,7 +10,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:8070/User/login', { email, password });
+      const res = await axios.post(`${import.meta.env.REACT_APP_SERVER_URL}/ User/login`, { email, password });
       localStorage.setItem('token', res.data.token);
       navigate('/students');
     } catch (err) {

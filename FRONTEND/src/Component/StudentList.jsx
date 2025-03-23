@@ -20,7 +20,7 @@ const StudentList = () => {
           return;
         }
 
-        const res = await axios.get("http://localhost:8070/student/getAllStudents", {
+        const res = await axios.get(`${import.meta.env.REACT_APP_SERVER_URL}/student/getAllStudents`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -62,7 +62,7 @@ const StudentList = () => {
     try {
       const token = localStorage.getItem("token");
   
-      await axios.delete("http://localhost:8070/student/deletedStudent", {
+      await axios.delete(`${import.meta.env.REACT_APP_SERVER_URL}/student/deletedStudent`, {
         headers: { Authorization: `Bearer ${token}` },
         data: { ids: Array.from(selectedStudents) }, // Correct way to send data in DELETE request
       });

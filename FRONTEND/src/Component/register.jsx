@@ -13,7 +13,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("https://student-management-seven-lemon.vercel.app/user/register", {
+      const res = await axios.post(`${import.meta.env.REACT_APP_SERVER_URL}/user/register`, {
         name,
         email,
         password,
