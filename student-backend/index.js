@@ -9,7 +9,7 @@ const app=express()
 dotenv.config()
 app.use(express.json())
 app.use(cors({
-    origin:"https://student-manangement-frontend.vercel.app/",
+    origin:"https://localhost:5173",
     credentials:true
 }))
 app.use("/User",userRoute)
